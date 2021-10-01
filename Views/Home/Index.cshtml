@@ -1,0 +1,41 @@
+﻿@model SurveyResults 
+
+<div class="text-center">
+    <h1 class="display-4">Dojo Survey</h1>
+    <form method="POST" asp-action="DisplayData">
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input class="form-control" asp-for="Name">
+        </div>
+
+        <div class="form-group"> 
+            <label asp-for="Dojo">Dojo Location:</label>
+            <select class="form-control" asp-for="Dojo">
+                <option>Chicago</option>
+                <option>San Jose</option>
+                <option>Tulsa</option>
+                <option>Burbank</option>
+                <option>Seattle</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Language">Favorite Language:</label>
+            <select class="form-control" asp-for="Language">
+                <option>Python</option>
+                <option>C#</option>
+                <option>MERN</option>
+                <option>Java</option>
+                <option>JS</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Comments">Comments:</label>
+            <textarea name="Comments" asp-for="Comments" cols="150" rows="5"></textarea>
+        </div>
+
+
+        <input type="submit" class="btn btn-lg btn-primary">
+    </form>
+</div>
