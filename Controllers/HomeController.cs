@@ -23,11 +23,17 @@ namespace Survey.Controllers
             return View();
         }
 
-        [HttpPost("displayData")]
-        public IActionResult DisplayData(SurveyResults newSurvey)
+        [HttpPost("displaySurvey")]
+        public IActionResult DisplaySurvey(SurveyResults newSurvey)
         {
-            ViewBag.NewSurvey = newSurvey;
-            return View("DisplaySurvey");
+            SurveyResults viewModel = new SurveyResults()
+            {   
+                Name = newSurvey.Name,
+                Dojo = newSurvey.Dojo,
+                Language = newSurvey.Language,
+                Comments = newSurvey.Comments,
+            };
+            return View(viewModel);
         }
 
         public IActionResult Privacy()

@@ -1,6 +1,8 @@
+@model SurveyResults
+
 <div>
-    <h2>Name: @ViewBag.NewSurvey.Name</h2>
-    <h2>Dojo Location: @ViewBag.NewSurvey.Dojo</h2>
-    <h2>Favorite Language: @ViewBag.NewSurvey.Language</h2>
-    <h2>Comments: @ViewBag.NewSurvey.Comments</h2>
+    <h2>Name: @Model.Name</h2>
+    <h2>Dojo Location: @Model.Dojo</h2>
+    <h2>Favorite Language: @Model.Language</h2>
+    <h2>Comments: @Model.Comments</h2>
 </div>
