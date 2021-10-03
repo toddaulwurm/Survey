@@ -26,14 +26,14 @@ namespace Survey.Controllers
         [HttpPost("displaySurvey")]
         public IActionResult DisplaySurvey(SurveyResults newSurvey)
         {
-            SurveyResults viewModel = new SurveyResults()
-            {   
-                Name = newSurvey.Name,
-                Dojo = newSurvey.Dojo,
-                Language = newSurvey.Language,
-                Comments = newSurvey.Comments,
-            };
-            return View(viewModel);
+            if(ModelState.IsValid)
+            {
+                return View(newSurvey);
+            }
+            else
+            {
+                return View("Index");
+            }
         }
 
         public IActionResult Privacy()
